@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local clock</title>
+    <style>
+        body {
+          margin: 0%;
+          background-color: black;
+          color: rgb(255, 255, 255);
+          font-weight: 600;
+   
+        }
+        .button {
+          width: 100px;
+          height: 100px;
+        }
+        #gray {
+          background-color: grey;
+        }
+        #white {
+          background-color: white;
+        }
+        #blue {
+          background-color: blue;
+        }
+        #yellow {
+          background-color: yellow;
+        }
+        .clenter{
+            margin: 200px;
+            text-align: center;
+        }
+        #clock{
+            width: 300px;
+            height: 100px;
+            background-color: orange;
+        }
+      </style>
+</head>
+<body>
+    <nav style="background-color: rgb(28, 18, 18); width: 100%; top: 0; shape-rendering: geometricPrecision; padding: 10px; border-radius: 10px;display: flex; justify-content: center;">
+        <div>
+            <a href="/domprojects/index.html">
+            <h1>ALL Projects</h1>
+            </a>
+        </div>
+    </nav>
+    <div class="center">
+        <div id="banner"><span>Your Local Time</span></div>
+        <div id="clock"></div>
+    </div>
+</body>
+<script>
+    const clock =document.getElementById('clock')
+    setInterval(()=>{
+        const time = new Date()
+        const t = time.toLocaleTimeString()  
+        console.log(t)
+        clock.innerHTML = t
+    },1000)
+</script>
+</html>
