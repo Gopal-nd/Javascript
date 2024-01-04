@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <h1>Hello Gopal</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+  </body>
+  <script>{
+
+      const h1 = document.querySelector('h1')
+      const stop = document.querySelector('#stop')
+      const start = document.querySelector('#start')
+      const date = (hi)=>{console.log(hi,Date.now())}
+      let time
+      start.addEventListener('click',()=>{
+          time = setInterval(date,1000,"hi")
+      })
+      stop.addEventListener('click',()=>{
+        clearInterval(time)
+      })
+  }
+  </script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav
+    style="
+      background-color: rgb(0, 0, 0);
+    
+      width: 100%;
+      top: 0;
+      shape-rendering: geometricPrecision;
+      padding: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+    "
+  >
+    <div>
+      <a href="/7_domprojects/index.html">
+        <h1>ALL Projects</h1>
+      </a>
+    </div>
+  </nav>
+    <h1  style="text-align: center;">
+    start to get unlimited background color</h1>
+    <h1 id="h1" style="text-align: center;">
+    </h1>
+    <button id="start">Start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    const start = document.querySelector('#start')
+    const stop = document.querySelector('#stop')
+    const randomColor = ()=>{
+        const hex = '0123456789ABCDEF'
+        let color ='#'
+        for(let i=0;i<6;i++){
+            color +=hex[Math.floor(Math.random()*16)]
+        }
+        return(color)
+    }
+    let interval;
+    const startChangeingColor = ()=>{
+        if(!interval){
+
+            interval = setInterval(newcolor,1000)
+        }
+
+        function newcolor(){
+
+            document.body.style.backgroundColor = randomColor()
+            document.getElementById('h1').innerHTML = randomColor()
+        }
+    }
+    const stopChangeingColor = ()=>{
+        clearInterval(interval)
+        interval = null
+    }
+    start.addEventListener('click',startChangeingColor)
+    stop.addEventListener('click',stopChangeingColor)
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav
+      style="
+        background-color: rgb(28, 18, 18);
+    
+        width: 100%;
+        top: 0;
+        shape-rendering: geometricPrecision;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+      "
+    >
+      <div>
+        <a href="/domprojects/index.html">
+          <h1>ALL Projects</h1>
+        </a>
+      </div>
+    </nav>
+    <div id="pojcect">
+        <div id="tabel">
+            <h1>Prss any key to see the magic</h1>
+        </div>
+    </div>
+
+</body>
+<script>
+    const tabel = document.getElementById('tabel')
+    window.addEventListener('keydown',(e)=>{
+        tabel.innerHTML = `
+        <div class="color">
+        <table>
+            <tr>
+                <th>key</th>
+                <th>Keycode</th>
+                <th>Code</th>
+            </tr>
+            <tr>
+                <td>${e.key === ' '?"Space":e.key}</td>
+                <td>${e.keyCode}</td>
+                <td>${e.code}</td>
+            </tr>
+        </table>
+    </div>
+        `
+    })
+</script>
+</html>
